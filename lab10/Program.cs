@@ -15,7 +15,6 @@ namespace lab10
 
 
             string inpattern = @"https?://[a-zA-Zа-яА-Я0-9]+(-?\.?[a-zA-Zа-яА-Я0-9]+)+";
-            string unpattern = @"w{3}.[a-zа-яA-ZА-Я 0-9]+-?\.?[a-zа-яA-ZА-Я0-9]+";
 
             string text = @"Звичайно! Ось трохи більше тексту з валідними та невалідними посиланнями без розділення на пункти:
                             Вибір правильного джерела інформації на Інтернеті є важливим завданням для отримання достовірної і актуальної інформації.Сайт https://site.com став добре відомим джерелом новин та аналітики з останніх технологічних трендів. Для бажаючих ознайомитися з можливостями програмного забезпечення, https://test.site.ua пропонує демонстраційні версії продуктів, які можна випробувати безкоштовно. А для пізнання більш докладної інформації про компанію C4U, https://my.site.c4u є відмінним вибором.
@@ -29,13 +28,6 @@ namespace lab10
             Console.WriteLine(text);
             Console.WriteLine("Список знайдених сайтів");
             for(int i = 0; i < result.Count; i++)
-            {
-                Console.WriteLine(result[i].Value);
-            }
-            Console.WriteLine("Невалідних");
-            rg = new Regex(unpattern);
-            result= rg.Matches(text);
-            for (int i = 0; i < result.Count; i++)
             {
                 Console.WriteLine(result[i].Value);
             }
